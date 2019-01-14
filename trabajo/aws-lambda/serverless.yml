@@ -1,0 +1,47 @@
+service: aws-lambda 
+
+provider:
+  name: aws
+  runtime: python3.6
+  timeout: 20
+
+functions:
+  # rq1
+  rq1_agg:
+    handler: handler.rq1_agg_handler
+    events:
+      - http: GET rq1_agg
+  rq1_mapred:
+    handler: handler.rq1_mapred_handler
+    events:
+      - http: GET rq1_mapred
+  # rq2
+  rq2_agg:
+    handler: handler.rq2_agg_handler
+    events:
+      - http: GET rq2_agg
+  rq2_mapred:
+    handler: handler.rq2_mapred_handler
+    events:
+      - http: GET rq2_mapred
+  # rq3
+  rq3_agg:
+    handler: handler.rq3_agg_handler
+    events:
+      - http: GET rq3_agg
+  rq3_mapred:
+    handler: handler.rq3_mapred_handler
+    events:
+      - http: GET rq3_mapred
+  # rq4
+  rq4_agg:
+    handler: handler.rq4_agg_handler
+    events:
+      - http: GET rq4_agg
+
+plugins:
+  - serverless-python-requirements
+
+package:
+  exclude:
+    - venv/** # virtualenv
