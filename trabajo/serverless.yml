@@ -3,7 +3,7 @@ service: aws-lambda
 provider:
   name: aws
   runtime: python3.6
-  timeout: 20
+  timeout: 60
 
 functions:
   # rq1

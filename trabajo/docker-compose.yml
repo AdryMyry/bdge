@@ -7,6 +7,8 @@ services:
     user: root
     environment:
       - GRANT_SUDO=yes
+      - AWS_ACCESS_KEY_ID=XXXXXXXXXXXXX
+      - AWS_SECRET_ACCESS_KEY=YYYYYYYYYYYYYYY
     command: start-notebook.sh --NotebookApp.token=''
     volumes:
       - ..:/home/jovyan/bdge
