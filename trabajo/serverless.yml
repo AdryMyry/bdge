@@ -41,7 +41,3 @@ functions:
 
 plugins:
   - serverless-python-requirements
-
-package:
-  exclude:
-    - venv/** # virtualenv
